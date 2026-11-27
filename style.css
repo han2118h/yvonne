@@ -1,0 +1,36 @@
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;overflow:hidden;background:#000;color:#fff;font-family:'Cormorant Garamond',Georgia,serif;touch-action:none;user-select:none;-webkit-user-select:none}
+#c{position:fixed;inset:0;width:100%;height:100%;display:block}
+.hidden{display:none!important}
+#fade{position:fixed;inset:0;background:#000;opacity:1;pointer-events:none;transition:opacity 1.8s;z-index:20}
+#loading,#intro{position:fixed;inset:0;background:#000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.6rem;text-align:center;padding:2rem;z-index:30;transition:opacity 1.2s}
+.ld{font-family:'Great Vibes',cursive;font-size:2.2rem;color:#ffe3ef;text-shadow:0 0 14px #ff5c8a}
+.bar{width:min(320px,70vw);height:6px;border-radius:6px;background:#2a1520;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#ff8fb1,#ffd27a);transition:width .3s}
+#lderr{color:#ffb3b3;max-width:480px;font-size:1.1rem}
+.glow{font-family:'Great Vibes',cursive;font-size:clamp(1.9rem,5.5vw,3.6rem);color:#ffe3ef;text-shadow:0 0 12px #ff7aa8,0 0 34px #ff3d7f;opacity:0;transition:opacity 2.2s;min-height:1.2em}
+.glow.on{opacity:1}
+.btn{font-family:inherit;font-weight:600;font-size:clamp(1rem,2.4vw,1.35rem);letter-spacing:.12em;color:#fff;background:linear-gradient(135deg,rgba(255,93,138,.85),rgba(190,30,80,.85));border:1.5px solid #ffd27a;border-radius:40px;padding:.85em 2.1em;cursor:pointer;box-shadow:0 0 18px rgba(255,93,138,.7);transition:transform .2s,box-shadow .2s;animation:pulse 2.2s infinite}
+.btn:hover{transform:scale(1.07);box-shadow:0 0 30px rgba(255,150,180,.95)}
+.btn.no{background:rgba(40,20,30,.75);border-color:rgba(255,255,255,.45);box-shadow:none;animation:none}
+@keyframes pulse{50%{box-shadow:0 0 32px rgba(255,120,160,1)}}
+#hud{position:fixed;inset:0;pointer-events:none;z-index:10}
+#hud button,#joy{pointer-events:auto}
+.icon{position:fixed;top:14px;right:14px;width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,210,122,.6);background:rgba(20,8,16,.6);font-size:1.3rem;cursor:pointer}
+#hint{position:fixed;top:16px;left:0;right:0;text-align:center;font-size:clamp(.95rem,2.2vw,1.2rem);color:#ffe9c9;text-shadow:0 0 8px #000;padding:0 70px}
+#dlg{position:fixed;left:50%;bottom:9%;transform:translate(-50%,20px);width:min(680px,90vw);padding:14px 22px;background:rgba(20,8,16,.66);border:1px solid rgba(255,200,120,.55);border-radius:16px;backdrop-filter:blur(6px);font-size:clamp(1.1rem,2.7vw,1.5rem);opacity:0;transition:.5s}
+#dlg.show{opacity:1;transform:translate(-50%,0)}
+#dname{display:block;color:#ffc46b;font-size:.8em;letter-spacing:.12em;margin-bottom:4px}
+#caption{position:fixed;left:0;right:0;bottom:7%;text-align:center;padding:0 6vw;font-family:'Great Vibes',cursive;font-size:clamp(1.6rem,4.4vw,2.8rem);color:#fff3d6;text-shadow:0 0 10px #ffb347,0 0 26px #ff7a5c;opacity:0;transform:translateY(12px);transition:.9s}
+#caption.show{opacity:1;transform:none}
+#big{position:fixed;left:0;right:0;top:28%;text-align:center;padding:0 6vw;font-family:'Great Vibes',cursive;font-size:clamp(1.9rem,5.6vw,3.8rem);line-height:1.25;color:#ffe3ef;text-shadow:0 0 12px #ff7aa8,0 0 36px #ff3d7f;opacity:0;transform:scale(.96);transition:opacity .8s,transform 1.2s}
+#big.show{opacity:1;transform:none}
+#choices{position:fixed;left:0;right:0;bottom:9%;display:flex;flex-direction:column;align-items:center;gap:1.1rem;opacity:0;pointer-events:none;transition:opacity .6s;padding:0 5vw;text-align:center}
+#choices.show{opacity:1}#choices.show .btn{pointer-events:auto}
+.popup{font-family:'Great Vibes',cursive;font-size:clamp(1.6rem,4.4vw,2.8rem);color:#fff;text-shadow:0 0 12px #ff7aa8;animation:pop .7s}
+@keyframes pop{from{opacity:0;transform:translateY(14px) scale(.94)}}
+.row{display:flex;gap:1.2rem;flex-wrap:wrap;justify-content:center}
+#replay{position:fixed;left:50%;bottom:12%;transform:translateX(-50%)}
+#joy{position:fixed;left:22px;bottom:28px;width:124px;height:124px;border-radius:50%;background:rgba(255,255,255,.1);border:2px solid rgba(255,255,255,.35);display:none;touch-action:none}
+.touch #joy{display:block}
+#knob{position:absolute;left:36px;top:36px;width:52px;height:52px;border-radius:50%;background:rgba(255,160,190,.75);box-shadow:0 0 14px #ff7aa8}
